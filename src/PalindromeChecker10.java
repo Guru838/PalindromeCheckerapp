@@ -1,0 +1,24 @@
+public class PalindromeChecker10 {
+
+    public static void main(String[] args) {
+
+        String input = "A man a plan a canal Panama";
+
+        // normalize string
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+
+        boolean isPalindrome = true;
+
+        // compare characters
+        for (int i = 0; i < normalized.length() / 2; i++) {
+
+            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Input: " + input);
+        System.out.println("Is Palindrome? " + isPalindrome);
+    }
+}
